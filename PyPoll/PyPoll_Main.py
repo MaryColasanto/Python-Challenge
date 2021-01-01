@@ -7,6 +7,8 @@ csvpath = os.path.join ("Resources", "election_data.csv")
 
 # Set Variables
 vote_count = 0
+candidates = []
+candidate_votes = []
 
 # Read the csv file
 with open(csvpath, 'r') as csvfile:
@@ -20,6 +22,14 @@ with open(csvpath, 'r') as csvfile:
         # Count the votes
         vote_count += 1
 
+        # Add candidates and their respective votes to separate lists
+        if row[2] not in candidates:
+            candidates.append(row[2])
+            candidate_votes.append(0)
+
+
     print("Election Results")
     print("------------------------")
     print(f"Total Votes: {vote_count}")
+    print(f"candidates: {candidates}")
+    print(f"candidate votes: {candidate_votes}")
