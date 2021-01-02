@@ -9,6 +9,7 @@ csvpath = os.path.join ("Resources", "election_data.csv")
 vote_count = 0
 candidates = []
 candidate_votes = []
+winner_votes = 0
 
 # Read the csv file
 with open(csvpath, 'r') as csvfile:
@@ -42,7 +43,32 @@ with open(csvpath, 'r') as csvfile:
 
     # Calculate the percent votes for each candidate
     for x in range(len(candidate_votes)):
-        percent_votes = round((candidate_votes[x]/vote_count)*100, 3)
+        percent_votes = round((candidate_votes[x]/vote_count)*100, 1)
         print(f"{candidates[x]}: {percent_votes}% ({candidate_votes[x]})")
 
-        print(range(len(candidate_votes)))
+        # Determine the winner
+        if winner_votes < candidate_votes[x]:
+            winner_votes = candidate_votes[x]
+            winner = candidates[x]
+    print("------------------------")
+    print(f"Winner: {winner}")
+    print("------------------------")
+
+# Print results to a text file
+
+analysis = os.path.join("Analysis", "PyPoll_Output.txt")
+file= open(analysis, 'w')
+
+file.write("Election Results")
+file.write("\n------------------------")
+file.write(f"\nTotal Votes: {vote_count}")
+file.write("\n------------------------")
+file.write(f"\n{candidates[0]}: {round((candidate_votes[0]/vote_count)*100, 3)}% ({candidate_votes[0]})")
+file.write(f"\n{candidates[0]}: {round((candidate_votes[1]/vote_count)*100, 3)}% ({candidate_votes[1]})")
+file.write(f"\n{candidates[0]}: {round((candidate_votes[2]/vote_count)*100, 3)}% ({candidate_votes[2]})")
+file.write(f"\n{candidates[0]}: {round((candidate_votes[3]/vote_count)*100, 3)}% ({candidate_votes[3]})")
+file.write("\n------------------------")
+file.write(f"\nWinner: {winner}")
+file.write("\n------------------------")
+
+file.close()
