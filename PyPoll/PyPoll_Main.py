@@ -38,5 +38,11 @@ with open(csvpath, 'r') as csvfile:
     print("Election Results")
     print("------------------------")
     print(f"Total Votes: {vote_count}")
-    print(f"candidates: {candidates}")
-    print(f"candidate votes: {candidate_votes}")
+    print("------------------------")
+
+    # Calculate the percent votes for each candidate
+    for x in range(len(candidate_votes)):
+        percent_votes = round((candidate_votes[x]/vote_count)*100, 3)
+        print(f"{candidates[x]}: {percent_votes}% ({candidate_votes[x]})")
+
+        print(range(len(candidate_votes)))
