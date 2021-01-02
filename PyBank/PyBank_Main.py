@@ -33,7 +33,7 @@ with open(csvpath, 'r') as csvfile:
         change_in_profit.append(change)
 
     # Calculate the average change in profit
-    average_change = round(sum(change_in_profit)/len(change_in_profit), 2)
+    average_change = round(sum(change_in_profit)/(len(change_in_profit)-1), 2)
 
     print("Financial Analysis")
     print("-----------------------")
@@ -54,4 +54,26 @@ with open(csvpath, 'r') as csvfile:
         date_index = change_in_profit.index(min_profit)
         min_date = date[date_index]
     print(f"Greatest Decrease in Profits: {min_date} ({min_profit})")
+
+# Print output to a text file
+analysis = os.path.join("Analysis", "PyBank_Output.txt")
+
+file = open(analysis, 'w')
+
+file.write("Financial Analysis")
+file.write("\n-----------------------")
+file.write(f"\nTotal Months: {total_months}")
+file.write(f"\nTotal: ${net_revenue}")
+file.write(f"\nAverage Change: ${average_change}")
+
+for x in range(len(change_in_profit)):
+    date_index = change_in_profit.index(max_profit)
+    max_date = date[date_index]
+file.write(f"\nGreatest Increase in Profits: {max_date} ({max_profit})")
+
+for x in range(len(change_in_profit)):  
+    date_index = change_in_profit.index(min_profit)
+    min_date = date[date_index]
+file.write(f"\nGreatest Decrease in Profits: {min_date} ({min_profit})")
     
+file.close()
