@@ -10,8 +10,7 @@ date = []
 profit = []
 total_months = 0
 net_revenue = 0
-change = 0
-change_in_profit = []
+change_in_profit = [0]
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -32,16 +31,27 @@ with open(csvpath, 'r') as csvfile:
     for x in range(1, len(date)):
         change = int(profit[x]) - int(profit[x-1])
         change_in_profit.append(change)
-        
+
+    # Calculate the average change in profit
+    average_change = round(sum(change_in_profit)/len(change_in_profit), 2)
 
     print("Financial Analysis")
     print("-----------------------")
     print(f"Total Months: {total_months}")
     print(f"Total: ${net_revenue}")
-    print(f"change = {change_in_profit}")
+    print(f"Average Change: ${average_change}")
 
+    # Find max and min changes in profit
+    max_profit = max(change_in_profit)
+    min_profit = min(change_in_profit)
 
+    for x in range(len(change_in_profit)):
+        date_index = change_in_profit.index(max_profit)
+        max_date = date[date_index]
+    print(f"Greatest Increase in Profits: {max_date} ({max_profit})")
 
-    # print(f"Average Change: ${average_change}")
-    # print(f"Greatest Increase in Profits: ")
-    # print(f"Greatest Decrease in Profits: ")
+    for x in range(len(change_in_profit)):  
+        date_index = change_in_profit.index(min_profit)
+        min_date = date[date_index]
+    print(f"Greatest Decrease in Profits: {min_date} ({min_profit})")
+    
