@@ -20,20 +20,29 @@ The next task was to find the maximum and minimum profits in the list of profit 
 
 [Tutorial I used to further understand how indexing works.](https://codedestine.com/python-list-index-count-example/)[Message board that helped me understand how to index into a list from another list.] (https://www.reddit.com/r/learnpython/comments/12a452/checking_if_an_object_inside_a_list_meets_a/)
 
+### Reporting the results in a text file ###
 
 To write the output file, I specificed the path and used the open function. Using the file.write function, I added the same terminal output to the text file and then closed the file. 
 
-
-
-
-
-
-
-
-
-
-
 ## PyPoll ##
 
+The provided csv file contained three columns: voter ID, County, and Candidate. This exercise asks you to calculate the total number of votes, display for each candidate the percentage and total votes received, and to comment the election winners name. 
 
- 
+### Counting the votes ###
+
+To determine the total number of votes needed, I used the csv reader to iterate over the rows and for each row I added one to the vote_count variable. I reported the final number at the total number of votes. I used an if statement to add each unique candidate's name to a list, (candidates) and made a second list (candiates_votes) with an initial value of zero for each candidate. I tallyed the candidate's votes by iterating over each row. For each row I used the value in the Candidate column to determine the index of the candidate in the candidates list, and then I added +1 to the corresponding index in the candidate_votes list. 
+
+### Determine percentage of votes and the winner ###
+
+
+
+
+
+
+
+
+
+
+### Reporting the results in a text file ###
+
+To write the output file, I specificed the path and used the open function. Using the file.write function, I added the same terminal output to the text file and then closed the file. 
