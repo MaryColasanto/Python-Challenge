@@ -16,9 +16,9 @@ To determine the average change, I divided the sum of the profit change list by 
 
 ### Maximum and minumum changes in profit ###
 
-The next task was to find the maximum and minimum profits in the list of profit change between months. I used the max and min functions on this list to return the corresponding values. 
+The next task was to find the maximum and minimum profits in the list of profit change between months. I used the max and min functions on this list to return the corresponding values. To report the corresponding date, I indexed into the change in profit list using the max profit value, and used that index value to return the corresponding month from the month list. I found the month corresponding to the minimum change in profit using the same code. 
 
-[Tutorials I used to help my brain understand how to index into a list.](https://codedestine.com/python-list-index-count-example/)(https://www.reddit.com/r/learnpython/comments/12a452/checking_if_an_object_inside_a_list_meets_a/)
+[Tutorial I used to further understand how indexing works.](https://codedestine.com/python-list-index-count-example/)[Message board that helped me understand how to index into a list from another list.] (https://www.reddit.com/r/learnpython/comments/12a452/checking_if_an_object_inside_a_list_meets_a/)
 
 
 To write the output file, I specificed the path and used the open function. Using the file.write function, I added the same terminal output to the text file and then closed the file. 
