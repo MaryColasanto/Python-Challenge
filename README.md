@@ -35,14 +35,9 @@ To determine the total number of votes needed, I used the csv reader to iterate 
 
 ### Determine percentage of votes and the winner ###
 
+The percentage of votes was determiened by looping through the candidates list and dividing each candidate's votes by teh total votes. I tried to use the round function to format the percentage with three decimal places, but for a second argument of 1-4 it would only return 1 decimal place, but at 5 it would return 5 decimal places. I deconstructed the code, but even on separate lines it gave the same error. Instead I used the format function that I don't enjoy do to the weird syntax and inability to use f strings in the print function. 
 
-
-
-
-
-
-
-
+To determine the winner I used an if statement to compare the candidate_votes to the variable winner_votes, which was originally set to zero. If the candidate_votes were greater than the winner_votes, then the candidate_votes value became the new winner_votes value and the winner was the corresponding candidate in the candidate list. 
 
 ### Reporting the results in a text file ###
 
