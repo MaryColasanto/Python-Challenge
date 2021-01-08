@@ -18,8 +18,8 @@ To determine the average change, I divided the sum of the profit change list by 
 
 The next task was to find the maximum and minimum profits in the list of profit change between months. I used the max and min functions on this list to return the corresponding values. To report the corresponding date, I indexed into the change in profit list using the max profit value, and used that index value to return the corresponding month from the month list. I found the month corresponding to the minimum change in profit using the same code. 
 
-[Tutorial I used to further understand how indexing works.](https://codedestine.com/python-list-index-count-example/)
-[Message board that helped me understand how to index into a list from another list.] (https://www.reddit.com/r/learnpython/comments/12a452/checking_if_an_object_inside_a_list_meets_a/)
+[Tutorial I used to further understand how indexing works] (https://codedestine.com/python-list-index-count-example/)
+[Message board that helped me understand how to index into a list from another list] (https://www.reddit.com/r/learnpython/comments/12a452/checking_if_an_object_inside_a_list_meets_a/)
 
 ### Reporting the results in a text file ###
 
